@@ -63,39 +63,71 @@ Fitur 'Jumlah Kamar Tidur', 'Jumlah Kamar Mandi', 'Luas Tanah', 'Luas Bangunan' 
 5. Mengevaluasi skor korelasi dengan correlation matrix
 ![Screenshoot Corr Matrix](img/corr_matrix.png)
 Dapat dilihat 'Jumlah Kamar Tidur', 'Jumlah Kamar Mandi', 'Luas Tanah', 'Luas Bangunan' memiliki angka mendekati 1 terhadap 'Price' yang mengindikasikan adanya korelasi terhadap fitur tersebut.
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Setelah menilai data dari tahap Data Understanding. Maka beberapa tahapan Data Preparation sebagai berikut:
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+1. Menangani Outliers - Melakukan filtering atau menggunakan metode IQR (Interquartile Range) untuk menghapus data di luar batas wajar. Outliers dapat menyebabkan model salah belajar karena mereka mendominasi pola data
+2. Menangani Innaccurate Data - Melakuakn imputasi dengan nilai rata-rata karena masih ada data anomali pda price yaitu 1700. Data tidak akurat bisa menyebabkan bias dan mengurangi peforma model karena input tidak sesuai realitas 
+3. Splitting Dataset - Mengambil beberapa fitur penting yang dilihat dari correlation matrix, kemudian membagi dataset menjadi data latih (training) dan data uji (testing) dengan rasio umum seperti 80:20. SPlitting penting agar model bisa diuji keandalannya dalam memprediksi data baru yang belum dilihat
+4. Standarisasi - Melakukan standarisasi menggunakan StandarScaler pada fitur numeric. Standarisasi penting untuk menghindari fitur dengan skala besar mendominasi perhitungan dalam algritma machine learning
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga properti berdasarkan fitur-fitur seperti jumlah kamar tidur, kamar mandi, luas tanah, luas bangunan, dan car port
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+**Model yang Digunakan:**
+1. K-Nearest Neighbors Regressor (KNN)
+- **Kelebihan**:
+    - sederhana dan mudah dipahami
+    - tidak memrlukan asumsi distribusi data
+- **Kekurangan**:
+    - sensitif terhadap outlier dan skala fitur
+    - waktu prediksi bisa lambat untuk dataset besar
+2. Random Forest Regressor
+- **Kelebihan**:
+    - Stabil terhadap oulier dan noise
+    - Memberikan feature importance
+- **Kekurangan**:
+    - Interpretasi lebih sulit dibandingkan model linear
+    - Dapat memakan banyak memori
+3. AdaBoost Regressor
+- **Kelebihan**:
+    - Baik dalam menangani data yang tidak seimbang
+    - Memperbaiki model sebelumnya
+- **Kekurangan**:
+    - Lebih rentan terhadap noise
+    - Peforma tergantung pada base estimator
+
+**Model Terbaik**
+Jika dilihat dari hasil evaluasi menggunakan metrik mse. **AdaBoost Regressor** adalah model terbaik dengan prediksi yang paling mendekati jika dilakukan prediksi terhadap nilai aktual.
+
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Pada proyek ini, karena permasalahan yang diselesaikan merupakan kasus regresi (prediksi harga rumah), maka metrik evaluasi yang digunakan adalah Mean Squared Error (MSE).
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+### Penjelasan Metrik
+**Mean Squared Error (MSE)**
+MSE mengukur rata-rata dari kuadrat selisih antara nilai aktual (y_true) dan prediksi (y_pred):
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+MSE = (1/n) * Σᵢⁿ (yᵢ - ŷᵢ)²
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+Keterangan:
+- yᵢ  = nilai aktual
+- ŷᵢ  = nilai prediksi
+- n   = jumlah sampel
+ 
+- Semakin kecil nilai MSE, semakin baik model dalam memprediksi.
+- MSE sangat sensitif terhadap outlier karena menggunakan kuadrat dari error.
 
-**---Ini adalah bagian akhir laporan---**
-
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
-
+### Interpretasi
+1. KNN Regressor
+- Memiliki nilai MSE paling tinggi di antara ketiga model, baik pada data train maupun test.
+- Hal ini menunjukkan bahwa model kurang mampu menangkap pola dalam data, dan mungkin terlalu sensitif terhadap tetangga terdekat tanpa mempertimbangkan kompleksitas global data.
+2. Random Forest Regressor
+- Menunjukkan keseimbangan terbaik antara data train dan test.
+- Meskipun nilai MSE train cukup rendah, performa pada data test menjadi yang terbaik (paling kecil), menunjukkan generalisasi yang baik.
+- Random Forest cocok untuk data kompleks dan nonlinear seperti harga properti karena mampu menangkap interaksi fitur yang kompleks.
+3. AdaBoost Regressor (Boosting)
+- Performa cukup baik dan terdekat dengan Random Forest di data test, tetapi sedikit lebih buruk.
+- Nilai MSE train cukup rendah, menunjukkan model mampu mempelajari data latih dengan baik.
+- Cocok untuk meningkatkan akurasi dari model-model lemah secara bertahap.
