@@ -5,11 +5,6 @@
 Sektor properti memegang peranan krusial dalam perekonomian suatu wilayah, mencerminkan dinamika sosial dan ekonomi yang kompleks. Di kota Makassar, sebagai salah satu pusat pertumbuhan ekonomi di Sulawesi Selatan, fluktuasi harga rumah menjadi perhatian penting bagi berbagai pihak, sebagaimana tercermin dalam Perkembangan Indeks Harga Konsumen/ Inflasi Kota Makassar Bulan Maret 2021 (BPS Makassar, 2021). Informasi akurat mengenai prediksi harga rumah dapat memberikan manfaat signifikan dalam pengambilan keputusan investasi, perencanaan pembangunan, serta formulasi kebijakan terkait perumahan. Namun, kompleksitas faktor-faktor yang mempengaruhi harga properti, mulai dari karakteristik fisik bangunan, lokasi strategis, hingga kondisi pasar secara keseluruhan, menjadikan prediksi harga rumah sebagai tantangan yang menarik untuk dieksplorasi (Goodfellow et al., 2016). Seiring dengan kemajuan teknologi dan ketersediaan data yang semakin melimpah, pendekatan berbasis machine learning menawarkan potensi yang besar untuk mengembangkan model prediksi yang lebih akurat dan efisien (Jordan & Mitchell, 2015). Beberapa studi telah menunjukkan keberhasilan algoritma seperti Random Forest Regressor dan K-Nearest Neighbors (KNN) dalam memprediksi harga rumah (Rais et al., 2024; Kurniawan et al., 2024). Proyek ini bertujuan untuk mengatasi tantangan tersebut dengan memanfaatkan algoritma Random Forest Regressor, dan K-Nearest Neighbors (KNN) untuk memprediksi harga rumah di kota Makassar, dengan harapan dapat memberikan kontribusi yang berharga bagi pemahaman dan pengambilan keputusan dalam pasar properti lokal.
 
 ## Business Understanding
-
-Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup:
-
 ### Problem Statements
 
 1. Bagaimana cara memprediksi harga rumah di Kota Makassar secara akurat berdasarkan fitur-fitur seperti lokasi, jumlah kamar tidur dan mandi, luas tanah, luas bangunan, serta ketersediaan carport?
@@ -49,9 +44,25 @@ Sumber data berasal dari Scraping data secara mandiri pada website penyedia harg
 
 ### EDA pada Dataset
 
-1. Inaccurate atau anomali pada data
+1. Outliers atau anomali pada data
 ![Screenshot dari deskripsi statistik pada data](img/desc_stat.png)
+Dapat dilihat innaccurate atau anomali pada data yang menunjukkan 200 jumlah pada kamar tidur, 100 pada kamar mandi, dan price yang menunjukkan harga 1700. Hal ini saya anggap anomali karena tidak logis jika properti rumah memiliki data seperti itu
 
+2. Mengecek Outliers dengan visualisasi
+![Screenshot outliers pada data](img/outliers.png)
+Outliers merupakan data anomali seperti yang ada pada poin pertama. kali ini kita melakukan visualisasi menggunakan boxplot
+
+3. Univariate Analysis - Numerical Features
+![Screenshot histogram num features](img/hist.png)
+Sebagian besar fitur memiliki distribusi skewed ke kanan. banyak outlier yang berpotensi mengganggu peforma model
+
+4. Mengmati korelasi fitur menggunakan pairplot
+![Screenshot pairplot korelasi](img/pairplot.png)
+Fitur 'Jumlah Kamar Tidur', 'Jumlah Kamar Mandi', 'Luas Tanah', 'Luas Bangunan' memiliki korelasi terhadap 'Price' walaupun sedikit lemah dikarenakan masih banyak outliers.
+
+5. Mengevaluasi skor korelasi dengan correlation matrix
+![Screenshoot Corr Matrix](img/corr_matrix.png)
+Dapat dilihat 'Jumlah Kamar Tidur', 'Jumlah Kamar Mandi', 'Luas Tanah', 'Luas Bangunan' memiliki angka mendekati 1 terhadap 'Price' yang mengindikasikan adanya korelasi terhadap fitur tersebut.
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
 
