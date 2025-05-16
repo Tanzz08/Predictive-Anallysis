@@ -109,7 +109,8 @@ Pada proyek ini, karena permasalahan yang diselesaikan merupakan kasus regresi (
 **Mean Squared Error (MSE)**
 MSE mengukur rata-rata dari kuadrat selisih antara nilai aktual (y_true) dan prediksi (y_pred):
 
-MSE = (1/n) * Σᵢⁿ (yᵢ - ŷᵢ)²
+![MSE formula](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\text{MSE}=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2)
+
 
 Keterangan:
 - yᵢ  = nilai aktual
