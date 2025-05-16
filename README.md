@@ -99,7 +99,7 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
     - Peforma tergantung pada base estimator
 
 **Model Terbaik**
-Jika dilihat dari hasil evaluasi menggunakan metrik mse. **AdaBoost Regressor** adalah model terbaik dengan prediksi yang paling mendekati jika dilakukan prediksi terhadap nilai aktual.
+Model terbaik berdasarkan metrik MSE pada data test adalah Random Forest Regressor, karena memiliki nilai MSE terkecil yaitu ~452 miliar.Random Forest menunjukkan performa generalisasi yang baik dengan selisih MSE yang tidak terlalu besar antara data train dan test. Oleh karena itu, Random Forest dipilih sebagai model akhir (final model) dalam proyek ini.
 
 
 ## Evaluation
