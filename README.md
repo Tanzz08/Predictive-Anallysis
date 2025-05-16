@@ -1,8 +1,6 @@
-# Laporan Proyek Machine Learning - Nama Anda
+# Laporan Proyek Machine Learning - Bustanul Khair Rahman
 
 ## Domain Proyek
-
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
 
 Sektor properti memegang peranan krusial dalam perekonomian suatu wilayah, mencerminkan dinamika sosial dan ekonomi yang kompleks. Di kota Makassar, sebagai salah satu pusat pertumbuhan ekonomi di Sulawesi Selatan, fluktuasi harga rumah menjadi perhatian penting bagi berbagai pihak, sebagaimana tercermin dalam Perkembangan Indeks Harga Konsumen/ Inflasi Kota Makassar Bulan Maret 2021 (BPS Makassar, 2021). Informasi akurat mengenai prediksi harga rumah dapat memberikan manfaat signifikan dalam pengambilan keputusan investasi, perencanaan pembangunan, serta formulasi kebijakan terkait perumahan. Namun, kompleksitas faktor-faktor yang mempengaruhi harga properti, mulai dari karakteristik fisik bangunan, lokasi strategis, hingga kondisi pasar secara keseluruhan, menjadikan prediksi harga rumah sebagai tantangan yang menarik untuk dieksplorasi (Goodfellow et al., 2016). Seiring dengan kemajuan teknologi dan ketersediaan data yang semakin melimpah, pendekatan berbasis machine learning menawarkan potensi yang besar untuk mengembangkan model prediksi yang lebih akurat dan efisien (Jordan & Mitchell, 2015). Beberapa studi telah menunjukkan keberhasilan algoritma seperti Random Forest Regressor dan K-Nearest Neighbors (KNN) dalam memprediksi harga rumah (Rais et al., 2024; Kurniawan et al., 2024). Proyek ini bertujuan untuk mengatasi tantangan tersebut dengan memanfaatkan algoritma Random Forest Regressor, dan K-Nearest Neighbors (KNN) untuk memprediksi harga rumah di kota Makassar, dengan harapan dapat memberikan kontribusi yang berharga bagi pemahaman dan pengambilan keputusan dalam pasar properti lokal.
 
@@ -14,7 +12,6 @@ Bagian laporan ini mencakup:
 
 ### Problem Statements
 
-Menjelaskan pernyataan masalah latar belakang:
 1. Bagaimana cara memprediksi harga rumah di Kota Makassar secara akurat berdasarkan fitur-fitur seperti lokasi, jumlah kamar tidur dan mandi, luas tanah, luas bangunan, serta ketersediaan carport?
     - Masalah ini timbul karena fluktuasi harga properti yang cukup tinggi, sementara masyarakat dan investor membutuhkan informasi yang akurat untuk pengambilan keputusan.
 2. Algoritma machine learning mana yang memberikan performa terbaik dalam memprediksi harga rumah di Kota Makassar?
@@ -24,7 +21,6 @@ Menjelaskan pernyataan masalah latar belakang:
 
 ### Goals
 
-Menjelaskan tujuan dari pernyataan masalah:
 1. Membangun model prediktif harga rumah berbasis machine learning yang mampu menghasilkan estimasi harga yang mendekati harga sebenarnya dengan error yang minimal.
 2. Mengevaluasi dan membandingkan performa tiga algoritma regresi populer yaitu K-Nearest Neighbors (KNN), Random Forest Regressor (RF), dan AdaBoost Regressor dalam konteks pasar properti Makassar.
 
@@ -54,7 +50,7 @@ Sumber data berasal dari Scraping data secara mandiri pada website penyedia harg
 ### EDA pada Dataset
 
 1. Inaccurate atau anomali pada data
-
+![Screenshot dari deskripsi statistik pada data](img\desc_stat.png)
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
