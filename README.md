@@ -50,7 +50,7 @@ Sumber data berasal dari Scraping data secara mandiri pada website penyedia harg
 ### EDA pada Dataset
 
 1. Inaccurate atau anomali pada data
-![Screenshot dari deskripsi statistik pada data](img\desc_stat.png)
+![Screenshot dari deskripsi statistik pada data](img/desc_stat.png)
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
