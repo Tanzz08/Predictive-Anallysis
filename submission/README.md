@@ -79,7 +79,7 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
 1. K-Nearest Neighbors Regressor (KNN)
 
     **Cara Kerja**:
-    
+
     KNN melakukan prediksi dengan cara mencari k tetangga terdekat dari data uji berdasarkan jarak (biasanya Euclidean). Nilai target (harga properti) kemudian diprediksi sebagai rata-rata dari tetangga-tetangga tersebut.
 
     **Parameter yang Digunakan**:
@@ -154,6 +154,7 @@ MSE mengukur rata-rata dari kuadrat selisih antara nilai aktual (y_true) dan pre
 
 ### Interpretasi
 **Hasil Evaluasi**
+
 ![Hasil Evaluasi](img/Screenshot%202025-05-18%20203318.png)
 1. KNN Regressor
 - Memiliki nilai MSE paling tinggi di antara ketiga model, baik pada data train maupun test.
