@@ -77,7 +77,9 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
 
 **Model yang Digunakan:**
 1. K-Nearest Neighbors Regressor (KNN)
+
     **Cara Kerja**:
+    
     KNN melakukan prediksi dengan cara mencari k tetangga terdekat dari data uji berdasarkan jarak (biasanya Euclidean). Nilai target (harga properti) kemudian diprediksi sebagai rata-rata dari tetangga-tetangga tersebut.
 
     **Parameter yang Digunakan**:
@@ -91,7 +93,9 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
     - sensitif terhadap outlier dan skala fitur
     - waktu prediksi bisa lambat untuk dataset besar
 2. Random Forest Regressor
+
     **Cara Kerja**:
+
     Random Forest membangun banyak pohon keputusan (decision trees) pada subset acak dari data. Hasil prediksi akhir diambil sebagai rata-rata dari prediksi masing-masing pohon (ensembling). Ini mengurangi risiko overfitting dibandingkan satu pohon keputusan.
 
     **Parameter yang Digunakan**:
@@ -111,6 +115,7 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
 3. AdaBoost Regressor
 
     **Cara Kerja**:
+
     AdaBoost bekerja dengan membangun serangkaian model (disebut estimator) secara berurutan. Setiap model berikutnya berfokus pada memperbaiki kesalahan dari model sebelumnya dengan memberikan bobot lebih pada data yang sulit diprediksi.
 
     **Parameter yang Digunakan**:
