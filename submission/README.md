@@ -86,21 +86,42 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
     **Kelebihan**:
     - sederhana dan mudah dipahami
     - tidak memrlukan asumsi distribusi data
+
     **Kekurangan**:
     - sensitif terhadap outlier dan skala fitur
     - waktu prediksi bisa lambat untuk dataset besar
 2. Random Forest Regressor
-**Kelebihan**:
-    - Stabil terhadap oulier dan noise
+    **Cara Kerja**:
+    Random Forest membangun banyak pohon keputusan (decision trees) pada subset acak dari data. Hasil prediksi akhir diambil sebagai rata-rata dari prediksi masing-masing pohon (ensembling). Ini mengurangi risiko overfitting dibandingkan satu pohon keputusan.
+
+    **Parameter yang Digunakan**:
+    - n_estimators=50: jumlah pohon 
+    - max_depth=16: Kedalaman pohon 
+    - random_state=55: Untuk haisl yang konsisten
+    - n_jobs=-1: gunakan semua core yang tersedia
+
+    **Kelebihan**:
+    - Tahan terhadap oulier dan noise
     - Memberikan feature importance
-**Kekurangan**:
+
+    **Kekurangan**:
     - Interpretasi lebih sulit dibandingkan model linear
     - Dapat memakan banyak memori
+
 3. AdaBoost Regressor
-**Kelebihan**:
+
+    **Cara Kerja**:
+    AdaBoost bekerja dengan membangun serangkaian model (disebut estimator) secara berurutan. Setiap model berikutnya berfokus pada memperbaiki kesalahan dari model sebelumnya dengan memberikan bobot lebih pada data yang sulit diprediksi.
+
+    **Parameter yang Digunakan**:
+    - learning_rate=0.05: Menentukan konstribusi masing-masing model terhadap prediksi akhir
+    - random_state=55: Untuk hasil yang konsisten
+
+    **Kelebihan**:
     - Baik dalam menangani data yang tidak seimbang
     - Memperbaiki model sebelumnya
-- **Kekurangan**:
+
+    **Kekurangan**:
     - Lebih rentan terhadap noise
     - Peforma tergantung pada base estimator
 
@@ -117,16 +138,18 @@ MSE mengukur rata-rata dari kuadrat selisih antara nilai aktual (y_true) dan pre
 
 ![MSE formula](https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\text{MSE}=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2)
 
-
-Keterangan:
+**Keterangan**:
 - yᵢ  = nilai aktual
 - ŷᵢ  = nilai prediksi
 - n   = jumlah sampel
  
+**Karakteristik**:
 - Semakin kecil nilai MSE, semakin baik model dalam memprediksi.
 - MSE sangat sensitif terhadap outlier karena menggunakan kuadrat dari error.
 
 ### Interpretasi
+**Hasil Evaluasi**
+![Hasil Evaluasi](img/Screenshot%202025-05-18%20203318.png)
 1. KNN Regressor
 - Memiliki nilai MSE paling tinggi di antara ketiga model, baik pada data train maupun test.
 - Hal ini menunjukkan bahwa model kurang mampu menangkap pola dalam data, dan mungkin terlalu sensitif terhadap tetangga terdekat tanpa mempertimbangkan kompleksitas global data.
@@ -138,3 +161,11 @@ Keterangan:
 - Performa cukup baik dan terdekat dengan Random Forest di data test, tetapi sedikit lebih buruk.
 - Nilai MSE train cukup rendah, menunjukkan model mampu mempelajari data latih dengan baik.
 - Cocok untuk meningkatkan akurasi dari model-model lemah secara bertahap.
+
+Proyek ini berhasil menjawab seluruh problem statement yang diajukan. Dengan membandingkan tiga algoritma regresi, Random Forest Regressor terbukti paling akurat dalam memprediksi harga rumah di Makassar berdasarkan fitur-fitur penting seperti lokasi dan luas bangunan. Evaluasi menunjukkan model ini memberikan performa terbaik dan cukup konsisten di berbagai rentang harga, meskipun error sedikit meningkat pada harga ekstrem. Tujuan utama proyek membangun model prediktif dengan error minimal telah tercapai, dan solusi yang dipilih dapat diandalkan untuk mendukung pengambilan keputusan di sektor properti.
+
+## Kesimpulan & Saran
+Model regresi berbasis Random Forest sangat menjanjikan unutk digunakan dalam prediksi harga rumah di Makassar, terutama karena: 
+- Kemampuannya dalam menangani data kompleks dan nonlinear,
+- MSE yang rendah dan performa yang konsisten,
+- Potensinya untuk diintegrasikan ke dalam aplikasi bisnis nyata.
