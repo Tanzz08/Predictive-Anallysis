@@ -42,7 +42,7 @@ Pada ptoyek ini saya menggunakan dataset tentang harga rumah yang ada di kota ma
 - Price : Harga rumah 
 - Timestamp : waktu saat berhasil mendapatkan data dari hasil scraping
 
-### EDA pada Dataset
+### EDA pada Data
 
 1. Outliers atau anomali pada data
 ![Screenshot dari deskripsi statistik pada data](img/desc_stat.png)
@@ -171,7 +171,7 @@ Model terbaik berdasarkan metrik MSE pada data test adalah Random Forest Regress
 
 Proyek ini berhasil menjawab seluruh problem statement yang diajukan. Dengan membandingkan tiga algoritma regresi, Random Forest Regressor terbukti paling akurat dalam memprediksi harga rumah di Makassar berdasarkan fitur-fitur penting seperti lokasi dan luas bangunan. Evaluasi menunjukkan model ini memberikan performa terbaik dan cukup konsisten di berbagai rentang harga, meskipun error sedikit meningkat pada harga ekstrem. Tujuan utama proyek membangun model prediktif dengan error minimal telah tercapai, dan solusi yang dipilih dapat diandalkan untuk mendukung pengambilan keputusan di sektor properti.
 
-## Kesimpulan & Saran
+## Kesimpulan 
 Model regresi berbasis Random Forest sangat menjanjikan unutk digunakan dalam prediksi harga rumah di Makassar, terutama karena: 
 - Kemampuannya dalam menangani data kompleks dan nonlinear,
 - MSE yang rendah dan performa yang konsisten,
