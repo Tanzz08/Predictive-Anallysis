@@ -130,9 +130,6 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
     - Lebih rentan terhadap noise
     - Peforma tergantung pada base estimator
 
-**Model Terbaik**
-Model terbaik berdasarkan metrik MSE pada data test adalah Random Forest Regressor, karena memiliki nilai MSE terkecil yaitu ~452 miliar.Random Forest menunjukkan performa generalisasi yang baik dengan selisih MSE yang tidak terlalu besar antara data train dan test. Oleh karena itu, Random Forest dipilih sebagai model akhir (final model) dalam proyek ini.
-
 
 ## Evaluation
 Pada proyek ini, karena permasalahan yang diselesaikan merupakan kasus regresi (prediksi harga rumah), maka metrik evaluasi yang digunakan adalah Mean Squared Error (MSE).
@@ -167,6 +164,9 @@ MSE mengukur rata-rata dari kuadrat selisih antara nilai aktual (y_true) dan pre
 - Performa cukup baik dan terdekat dengan Random Forest di data test, tetapi sedikit lebih buruk.
 - Nilai MSE train cukup rendah, menunjukkan model mampu mempelajari data latih dengan baik.
 - Cocok untuk meningkatkan akurasi dari model-model lemah secara bertahap.
+
+**Model Terbaik**
+Model terbaik berdasarkan metrik MSE pada data test adalah Random Forest Regressor, karena memiliki nilai MSE terkecil yaitu ~452 miliar.Random Forest menunjukkan performa generalisasi yang baik dengan selisih MSE yang tidak terlalu besar antara data train dan test. Oleh karena itu, Random Forest dipilih sebagai model akhir (final model) dalam proyek ini.
 
 Proyek ini berhasil menjawab seluruh problem statement yang diajukan. Dengan membandingkan tiga algoritma regresi, Random Forest Regressor terbukti paling akurat dalam memprediksi harga rumah di Makassar berdasarkan fitur-fitur penting seperti lokasi dan luas bangunan. Evaluasi menunjukkan model ini memberikan performa terbaik dan cukup konsisten di berbagai rentang harga, meskipun error sedikit meningkat pada harga ekstrem. Tujuan utama proyek membangun model prediktif dengan error minimal telah tercapai, dan solusi yang dipilih dapat diandalkan untuk mendukung pengambilan keputusan di sektor properti.
 
