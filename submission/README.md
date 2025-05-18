@@ -77,17 +77,16 @@ Tahapan ini berfokus pada proses membangun model regresi untuk memprediksi harga
 
 **Model yang Digunakan:**
 1. K-Nearest Neighbors Regressor (KNN)
-**Cara Kerja**:
+    **Cara Kerja**:
+    KNN melakukan prediksi dengan cara mencari k tetangga terdekat dari data uji berdasarkan jarak (biasanya Euclidean). Nilai target (harga properti) kemudian diprediksi sebagai rata-rata dari tetangga-tetangga tersebut.
 
-KNN melakukan prediksi dengan cara mencari k tetangga terdekat dari data uji berdasarkan jarak (biasanya Euclidean). Nilai target (harga properti) kemudian diprediksi sebagai rata-rata dari tetangga-tetangga tersebut.
+    **Parameter yang Digunakan**:
+    - n_neighbors=10: Jumlah tetangga yang digunakan untuk prediksi
 
-**Parameter yang Digunakan**:
-- n_neighbors=10: Jumlah tetangga yang digunakan untuk prediksi
-
-**Kelebihan**:
+    **Kelebihan**:
     - sederhana dan mudah dipahami
     - tidak memrlukan asumsi distribusi data
-**Kekurangan**:
+    **Kekurangan**:
     - sensitif terhadap outlier dan skala fitur
     - waktu prediksi bisa lambat untuk dataset besar
 2. Random Forest Regressor
