@@ -166,6 +166,7 @@ MSE mengukur rata-rata dari kuadrat selisih antara nilai aktual (y_true) dan pre
 - Cocok untuk meningkatkan akurasi dari model-model lemah secara bertahap.
 
 **Model Terbaik**
+
 Model terbaik berdasarkan metrik MSE pada data test adalah Random Forest Regressor, karena memiliki nilai MSE terkecil yaitu ~452 miliar.Random Forest menunjukkan performa generalisasi yang baik dengan selisih MSE yang tidak terlalu besar antara data train dan test. Oleh karena itu, Random Forest dipilih sebagai model akhir (final model) dalam proyek ini.
 
 Proyek ini berhasil menjawab seluruh problem statement yang diajukan. Dengan membandingkan tiga algoritma regresi, Random Forest Regressor terbukti paling akurat dalam memprediksi harga rumah di Makassar berdasarkan fitur-fitur penting seperti lokasi dan luas bangunan. Evaluasi menunjukkan model ini memberikan performa terbaik dan cukup konsisten di berbagai rentang harga, meskipun error sedikit meningkat pada harga ekstrem. Tujuan utama proyek membangun model prediktif dengan error minimal telah tercapai, dan solusi yang dipilih dapat diandalkan untuk mendukung pengambilan keputusan di sektor properti.
